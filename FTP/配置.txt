@@ -1,0 +1,8 @@
+1，cd /etc/vsftpd
+2，vim chroot_list
+3，新增虚拟用户到配置文件
+4，:wq保存退出
+5，vim /etc/selinux/config,修改为SELINUX=disabled
+6，:wq保存退出
+      如果一会验证碰到550拒绝访问请执行:setsebool -P ftp_home_dir 1
+      重启一下linux服务器，执行reboot

@@ -1,0 +1,14 @@
+git config --global user.name "ealldy"
+git config --global user.email "13192020272@163.com"
+git config --global core.autocrlf false
+git config --global gui.encoding utf-8
+git config --global core.quotepath off
+
+windows上还需要配置:
+git config --global core.ignorecase false
+
+配置ssh
+ssh-keygen -t rsa -C "13192020272@163.com"
+ssh-add ~/.ssh/id_rsa 若出现Could not open a connection to your authentication agent.异常 则eval `ssh-agent`再执行ssh-add
+ssh-add -l 查看
+cat ~/.ssh/id_rsa.pub

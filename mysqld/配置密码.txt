@@ -1,0 +1,10 @@
+1，mysql -u root
+使用空密码进入安装好的mysql
+2，查看用户信息
+select Host,User,Password from mysql.user;
+3，修改密码
+set password for root@localhost = password('ealldy1');
+4，退出
+exit;
+5，重新进入
+mysql -u root -p

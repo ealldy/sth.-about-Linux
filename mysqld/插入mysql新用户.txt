@@ -1,0 +1,4 @@
+1，插入mysql新用户
+insert into mysql.user(Host,User,Password) values ("localhost","yourusername",password("yourpassword"));
+2，刷新，是操作生效
+flush privileges;

@@ -1,0 +1,4 @@
+1，创建专属文件夹：mkdir /ftpfile
+2，添加匿名用户：useradd ftpuser -d /ftpfile -s /sbin/nologin
+3，修改所有者和所属组：chown -R ftpuser.ftpuser /ftpfile 
+4，重设密码：passwd ftpuser

@@ -1,0 +1,9 @@
+1，
+iptables -I INPUT -p tcp --dport 80 -s 10.10.163.232 -m connlimit --connlimit-above 10 -j REJECT
+只允许10个
+
+2,每小时只允许几个访问
+iptables -A INPUT -p icmp -m limit --limit 3/hour   --limit-burst 10 -j ACCEPT  如果超过10个访问，每小时只允许3个通过
+                                           --limit 1/m
+iptables -A INPUT -p icmp -j DROP
+

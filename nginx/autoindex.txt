@@ -1,0 +1,1 @@
+如果不想暴露网页目录索引，将conf文件里的autoindex设为off

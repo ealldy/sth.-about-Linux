@@ -1,0 +1,17 @@
+iptables -I INPUT -p tcp --dport 80 -j ACCEPT
+iptables -I INPUT -p tcp --dport 10:21 -j ACCEPT
+iptables -I INPUT -p tcp --dport 22 -j ACCEPT
+iptables -I INPUT -p icmp -j ACCEPT
+iptables -A INPUT -j REJECT
+
+允许通过lo网卡访问
+iptables -I INPUT -i lo -jACCEPT
+
+允许访问外网(状态码为ESTABLISHED,RELATED可以通过)
+iptables -I INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+只允许10.10.188.233这台机器访问
+iptables -D INPUT -p tcp --dport 80 -j ACCEPT                                             先删除http端口访问权
+iptables -I INPUT -p tcp -s 10.10.188.233 --dport 80 -j ACCEPT                   再允许10.10.188.233通过tcp，80端口访问
+
+iptables -A INPUT -s 10.10.155.0/24 -j ACCEPT     允许10.10.155.0/24这台机子访问

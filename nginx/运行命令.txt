@@ -1,0 +1,5 @@
+运行  /usr/local/nginx/sbin/nginx
+停止  /usr/local/nginx/sbin/nginx -s stop或-s quit
+重启  /usr/local/nginx/sbin/nginx -s reload
+查看进程 ps -ef |grep nginx
+平滑重启 kill -HUP [Nginx主进程号(PID)]

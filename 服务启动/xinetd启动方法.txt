@@ -1,0 +1,9 @@
+1,
+cd /etc/xinetd.d/
+进入此文件夹，修改需要启动的服务配置文件
+
+2,
+然后重启xinetd  
+service xinetd restart
+
+3，xinetd自启动和启动是同步的

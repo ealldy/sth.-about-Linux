@@ -1,0 +1,4 @@
+1，
+查外网IP地址，上百度搜ip地址，出来的就是自己的公网ip
+2，
+查内网:Win+R,cmd,ipconfig/all

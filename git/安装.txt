@@ -1,0 +1,5 @@
+
+wget http://learning.happymmall.com/git/git-v2.8.0.tar.gz
+
+git依赖:
+yum -y install zlib-devl openssl-devel cpio expat-devel gettext-devel curl-devel perl-ExtUtils-CBuilder perl-ExtUtils-MakeMaker

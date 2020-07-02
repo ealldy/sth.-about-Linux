@@ -1,0 +1,11 @@
+1，赋予本地用户所有权限
+    grant all privileges on mmall.* to root@localhost identified by 'password';
+                                       数据库       用户名                                       密码
+2，给账号开通外网所有权限
+    grant all privileges on mmall.* to 'yourusername'@'%' identified by 'yourpassword';
+3，给指定网段开通账号的指定权限
+    grant select,insert,updata on mmall.* to yourusername@'192.11.11.1' identified by 'yourpassword';
+
+使操作生效 flush privileges;
+
+查看权限 show grants for 'root'@'%';

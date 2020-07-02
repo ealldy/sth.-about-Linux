@@ -1,0 +1,6 @@
+wget http://learning.happymmall.com/nginx/linux-nginx-1.10.2.tar.gz
+tar -zxvf linux-nginx-1.10.2.tar.gz -C /usr/local/
+cd /usr/local/nginx-1.10.2
+./configure
+make && make install
+whereis nginx

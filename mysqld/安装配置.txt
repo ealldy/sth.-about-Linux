@@ -1,0 +1,18 @@
+1，安装
+yum install mysql-server
+2，查看
+rpm -qa |grep mysql-server
+3，配置
+cd /etc/my.cnf
+4，自启动
+chkconfig mysqld on
+查看2345是否为on
+chkconfig --list mysqld
+5，防火墙配置(centos6)
+vim /etc/sysconfig/iptables
+加入来允许3306
+-A INPUT -p tcp -m tcp --dport 3306 -j ACCEPT
+6，启动service 
+service mysqld start
+7，进入
+mysql -u root

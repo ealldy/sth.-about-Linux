@@ -1,0 +1,20 @@
+1，目录权限只有0 5 7 有意义，且w权限最大
+2，文件权限x权限最大
+3，目录默认最大权限777
+4，文件默认最大权限666
+5，超级用户默认权限设置 
+      (暂时修改)
+     umask=0022      umask需要换算成字母再减
+     普通用户默认权限设置 
+     umask=0002 
+6，永久修改umask值
+      vi /etc/profile
+7，给一个子用户修改权限的最好方法是修改文件的所有者，或者将子用户放入所有组，而不是修改 其他人 权限
+8，修改所有者权限
+     chown [username] [filename]
+9，修改所有组权限
+      chogrp [groupname] [filename]
+10，添加用户组
+      groupadd [groupname]
+11,添加用户到用户组
+      gpasswd -a [username] [groupname]

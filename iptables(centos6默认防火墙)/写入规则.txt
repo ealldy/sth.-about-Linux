@@ -1,0 +1,7 @@
+iptables -I INPUT -p tcp --dport 22 -j ACCEPT
+-I表示在列表上分插入规则，改成-A可以在列表下方加入规则，改为-D删除规则
+-p表示选择tcp icmp
+tcp表示对于使用tcp协议的访问
+-dport 22 对于本机的22端口
+-j不清楚
+ACCEPT允许访问

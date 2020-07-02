@@ -1,0 +1,16 @@
+git init 在空git上生成.git文件(隐藏看不见)
+git add . 加入待提交的文件列表
+git commit -am “first commit init project”将文件提交到本地仓库， -am后面加注释
+git remote add origin git@github.com:ealldy/mmall_learning.git 建立远程链接，并将链接命名为origin
+git brach 查看当前的分支 git brach -r 查看远程分支
+git push -u origin master将本地仓库的文件发送到origin这个远程链接的master分支
+
+若提示没有整合，则git pull再git push
+若提示没有当前分支新，则git push -u -f origin master强制推送
+
+创建分支： $ git branch v1.0 origin/master   (在origin/master上创建，以下同样)
+切换分支： $ git checkout v1.0
+创建并切换分支： $ git checkout -b v1.0
+git status查看当前状态
+
+wx_720c732350

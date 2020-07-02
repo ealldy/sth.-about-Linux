@@ -1,0 +1,15 @@
+1,
+chkconfig --list
+查看服务自启动状态，可以看到所有RPM包安装的服务
+
+2,
+chkconfig --level 2345 httpd on
+自启动httpd, 2345表示级别
+
+3,
+chkconfig --list | grep httpd
+查看httpd自启动状态
+
+4，
+使用
+ntsysv

@@ -1,0 +1,36 @@
+1,
+安装vsftpd才可以开启21端口:
+yum install vsftpd -y
+
+2,vsftpd的配置
+cd /etc/vsftpd可以看到有三个文件：
+vsftpd.ftpusers：位于/etc/vsftpd目录下。它指定了哪些用户账户不能访问FTP服务器，例如root等。
+vsftpd.user_list：位于/etc/vsftpd目录下。该文件里的用户账户在默认情况下也不能访问FTP服务器，仅当vsftpd .conf配置文件里启用userlist_enable=NO选项时才允许访问。
+vsftpd.conf：位于/etc/vsftpd目录下。来自定义用户登录控制、用户权限控制、超时设置、服务器功能选项、服务器性能选项、服务器响应消息等FTP服务器的配置。
+
+3,
+service vsftpd
+重启服务
+
+4，
+查看端口21是否开启
+netstat -lunpt
+
+5,若配置正确且还连不上，则查看防火墙
+centos6查看iptables -L  
+centos7查看firewall-cmd
+
+6,要启用被动模式(passive),
+第一种方法，开启高端口以让客户端从高端口拉取数据
+需要配置vsftpd.conf
+port_enable=yes
+pasv_min_port=50000
+pasv_max_port=60000
+
+并且iptables要开启端口21和高端口50000:60000
+
+第二种方法，
+1，先开启21端口
+2，然后加入ftp内核模块到modprobe中: modprobe nf_conntrack_ftp(临时)
+     或开机自动加载: vim /etc/sysconfig/iptables-config
+                              IPTABLES_MODULES="nf_conntrack_ftp"

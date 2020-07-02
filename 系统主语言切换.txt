@@ -1,0 +1,2 @@
+3，LANG=zh_CN.utf-8中文显示
+4，LANG=en_US英文显示

@@ -1,0 +1,1 @@
+modprobe -l|grep ftp （查看ftp内核模块）

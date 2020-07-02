@@ -1,0 +1,9 @@
+1，
+vi /etc/rc.d/rc.local
+以上文件会在登陆前的最后一刻执行
+其内容一般为touch /var/lock/subsys/local
+2，
+可以在rc.local这个文件中加入服务启动执行命令使得服务开机自启动
+编辑加入 /etc/init.d/httpd start来使httpd开机自启
+
+
